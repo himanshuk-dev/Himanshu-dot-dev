@@ -7,8 +7,18 @@ import pathos from "../static/projects/Pathos.webp";
 import eliteKitchenFindsImage from "../static/projects/EliteKitchenFinds.webp";
 import pathosBadge from "../static/icons/Pathos-badge.PNG";
 import craftMyCardImage from "../static/projects/craftmycard.png";
+import beyondSnackImage from "../static/projects/BeyondSnack.webp"; // Add the image
 
 const Projects = [
+  {
+    id: 0,
+    title: "Beyond Snack | Healthy Snacking E-commerce",
+    linkData: "beyondsnack",
+    description:
+      "Beyond Snack is a health-focused snack brand built with a custom full-stack e-commerce platform. The site features Stripe-integrated checkout, tax and shipping logic, and a vibrant frontend styled with Material UI.",
+    image: beyondSnackImage,
+    backgroundColor: "#EAEDE9",
+  },
   {
     id: 1,
     title: "CraftMyCard | Handmade Greeting Cards",
@@ -23,7 +33,7 @@ const Projects = [
     title: "Elite Kitchen Finds | Curated Kitchenware E-commerce",
     linkData: "elitekitchenfinds",
     description:
-      "Elite Kitchen Finds is a bespoke e-commerce platform designed and developed for a client, featuring a curated selection of premium kitchen essentials. ",
+      "Elite Kitchen Finds is a bespoke e-commerce platform designed and developed for a client, featuring a curated selection of premium kitchen essentials.",
     image: eliteKitchenFindsImage,
     backgroundColor: "#F5F4F4",
   },
@@ -69,7 +79,7 @@ const Projects = [
     title: "Currency Converter",
     linkData: "currency-converter",
     description:
-      "App build on popular Python framework: Flask built using API: exchangerate.host. ",
+      "App build on popular Python framework: Flask built using API: exchangerate.host.",
     image: currencyConverter,
     backgroundColor: "#F2F4E7",
   },
