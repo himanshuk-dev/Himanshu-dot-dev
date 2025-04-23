@@ -7,7 +7,7 @@ import pathos from "../static/projects/Pathos.webp";
 import eliteKitchenFindsImage from "../static/projects/EliteKitchenFinds.webp";
 import pathosBadge from "../static/icons/Pathos-badge.PNG";
 import craftMyCardImage from "../static/projects/craftmycard.png";
-import beyondSnackImage from "../static/projects/BeyondSnack.webp"; // Add the image
+import beyondSnackImage from "../static/projects/BeyondSnack.webp"; 
 
 const Projects = [
   {
@@ -17,7 +17,7 @@ const Projects = [
     description:
       "Beyond Snack is a health-focused snack brand built with a custom full-stack e-commerce platform. The site features Stripe-integrated checkout, tax and shipping logic, and a vibrant frontend styled with Material UI.",
     image: beyondSnackImage,
-    backgroundColor: "#EAEDE9",
+    backgroundColor: "#f9e7e5",
   },
   {
     id: 1,

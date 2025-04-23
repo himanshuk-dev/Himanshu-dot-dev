@@ -6,6 +6,7 @@ import Jeopardy from "./projectData/jeopardy";
 import Pathos from "./projectData/pathosData";
 import EliteKitchenFindsData from "./projectData/EliteKitchenFindsData";
 import CraftMyCardData from "./projectData/CraftMyCardData";
+import BeyondSnackData from './projectData/BeyondSnackData'
 
 const ProjectData = {
   remplr: RemplrData,
@@ -16,6 +17,7 @@ const ProjectData = {
   pathos: Pathos,
   elitekitchenfinds: EliteKitchenFindsData,
   craftmycard: CraftMyCardData,
+  beyondsnack: BeyondSnackData
 };
 
 export default ProjectData;
