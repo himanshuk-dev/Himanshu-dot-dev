@@ -34,12 +34,13 @@ const AboutPage = () => {
             working in leadership + System Admin roles in the IT industry."
             color={"#F9EFE3"}
           />
-          <Box
-            header="Recent Updates"
-            text="Designed and developed eCommerce platform for a client using Next.js on Frontend and Sanity for headless CMS. Led the development of a high-conversion e-commerce platform at EliteKitchenFinds utilizing Next.js and TypeScript, while crafting dynamic, responsive interfaces with React and Chakra UI, significantly enhancing user engagement and accessibility."
-            color="#E8E5CF"
-          />
-          <Box
+         <Box
+         header="Recent Updates"
+         text="Developed and launched Beyond Snack, a clean-label food brand offering protein-rich, no-added-sugar snacks. I led the end-to-end development of the e-commerce platform using React, Node.js, PostgreSQL, and AWS. Currently managing product development, online storefront, admin dashboard, and customer engagement systems."
+         color="#E8E5CF"
+         />
+         
+         <Box
             header="How it Sparked?"
             text="During my time working on Wordpress frontend for my food blog, I got interested in HTML, CSS, and JavaScript. That's where I found my passion for development and made a decision to switch my career and enroll in a Full-stack software engineering program at Springboard."
             color={"#F8FFF2"}

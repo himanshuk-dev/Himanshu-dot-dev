@@ -9,11 +9,19 @@ import start from "../static/icons/start.png";
 
 const TimelineData = [
   {
-    date: "July 2024 - Present",
+  date: "September 2024 - Present",
+  event:
+    "Developed and launched Beyond Snack, a clean-label food brand focused on protein-rich, no-added-sugar snacks. I'm leading all aspects from product development to full-stack platform implementation using React, Node.js, PostgreSQL, and AWS. Currently managing e-commerce, fulfillment, customer engagement, and admin dashboard systems.",
+  color: "#F0F8F8",
+  projectLink: "https://beyondsnack.ca/",
+    linkText: "Checkout: Beyond Snack",
+},
+  {
+    date: "July 2024 - September 2024",
     event:
-      "Currently building a lead generation platform for an AI startup. This project involves architecture planning and implementing scalable front-end and back-end systems using React, Python, and PostgreSQL. The platform is tailored to optimize lead acquisition and conversion processes, integrating advanced data analytics and automation tools to enhance business growth.",
+      "Worked at Iter Innovandi on a lead generation platform for an AI startup. Led architecture planning and implemented scalable front-end and back-end systems using React, Python, and PostgreSQL. Integrated automation tools and data analytics to optimize lead acquisition and conversion processes.",
     color: "#E8F0FE",
-  },
+},
   {
     date: "April 2024 - June 2024",
     event:
