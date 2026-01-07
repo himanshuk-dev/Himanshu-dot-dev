@@ -10,6 +10,10 @@
   --v1-font-sans: "Manrope", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .v1-page {
   background: radial-gradient(circle at top left, #fff5e6 0%, #f9f4ea 55%, #f2eadf 100%);
   color: var(--v1-ink);
@@ -17,6 +21,17 @@
   font-family: var(--v1-font-sans);
   position: relative;
   overflow-x: hidden;
+}
+
+.v1-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.v1-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .v1-page::before,
@@ -266,5 +281,17 @@
   .v1-nav-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .v1-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

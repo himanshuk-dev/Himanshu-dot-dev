@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import profileImage from "../static/images/himanshu.jpg";
 import services from "../services/servicesData";
@@ -53,10 +53,29 @@ const V1Page = () => {
     .filter((item) => item.date && item.event)
     .slice(0, 4);
 
+  useEffect(() => {
+    const elements = document.querySelectorAll(".v1-reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="v1-page">
       <V1Nav />
-      <header className="v1-hero" id="v1-hero">
+      <header className="v1-hero v1-reveal" id="v1-hero">
         <div className="v1-hero-content">
           <p className="v1-eyebrow">Product-minded engineer</p>
           <h1>Himanshu Kumar</h1>
@@ -78,7 +97,7 @@ const V1Page = () => {
         </div>
       </header>
 
-      <section className="v1-section v1-story" id="v1-story">
+      <section className="v1-section v1-story v1-reveal" id="v1-story">
         <div className="v1-section-inner">
           <h2>Story</h2>
           <div className="v1-story-grid">
@@ -89,7 +108,10 @@ const V1Page = () => {
         </div>
       </section>
 
-      <section className="v1-section v1-credibility" id="v1-timeline">
+      <section
+        className="v1-section v1-credibility v1-reveal"
+        id="v1-timeline"
+      >
         <div className="v1-section-inner">
           <h2>Credibility</h2>
           <div className="v1-stats">
@@ -111,12 +133,12 @@ const V1Page = () => {
         </div>
       </section>
 
-      <section className="v1-section v1-work" id="v1-work">
+      <section className="v1-section v1-work v1-reveal" id="v1-work">
         <div className="v1-section-inner">
           <h2>Featured Work</h2>
           <div className="v1-work-grid">
             {featuredProjects.map((project) => (
-              <article className="v1-work-card" key={project.title}>
+              <article className="v1-work-card v1-reveal" key={project.title}>
                 <div className="v1-work-copy">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
@@ -136,12 +158,12 @@ const V1Page = () => {
         </div>
       </section>
 
-      <section className="v1-section v1-services" id="v1-services">
+      <section className="v1-section v1-services v1-reveal" id="v1-services">
         <div className="v1-section-inner">
           <h2>Services</h2>
           <div className="v1-services-grid">
             {services.map((service) => (
-              <div className="v1-service" key={service.category}>
+              <div className="v1-service v1-reveal" key={service.category}>
                 <h3>{service.category}</h3>
                 <ul>
                   {service.items.map((item) => (
@@ -154,7 +176,7 @@ const V1Page = () => {
         </div>
       </section>
 
-      <section className="v1-section v1-contact" id="v1-contact">
+      <section className="v1-section v1-contact v1-reveal" id="v1-contact">
         <div className="v1-section-inner">
           <h2>Let’s build something</h2>
           <p>
