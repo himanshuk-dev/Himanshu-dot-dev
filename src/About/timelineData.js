@@ -6,6 +6,7 @@ import codeReview from "../static/icons/codeReview.png";
 import assessment from "../static/icons/assessment.png";
 import essential from "../static/icons/essential.png";
 import start from "../static/icons/start.png";
+import { SITE_BASE_PATH } from "../common/siteMeta";
 
 const TimelineData = [
   {
@@ -33,7 +34,7 @@ const TimelineData = [
     event:
       "Led the development of a high-conversion e-commerce platform at EliteKitchenFinds utilizing Next.js and TypeScript, while crafting dynamic, responsive interfaces with React and Chakra UI, significantly enhancing user engagement and accessibility.",
     color: "#F9E2DC",
-    projectLink: "https://himanshu.dev/projects/elitekitchenfinds",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/elitekitchenfinds`,
     linkText: "Checkout: EliteKitchenFinds",
   },
   {
@@ -59,7 +60,7 @@ const TimelineData = [
     event:
       " Won Springboard Hackathon where I worked in a team to work on a original idea to build AI-powered platform aiming to boost empathy and emotional intelligence in remote workplace environments, which got selected out of hundreds of ideas. ",
     color: "#F9EFE3",
-    projectLink: "https://himanshu.dev/projects/pathos",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/pathos`,
     linkText: "Checkout Project: Pathos",
   },
   {
@@ -76,7 +77,7 @@ const TimelineData = [
     event:
       "Built Full Stack app: Remplr, Meal planner platform to help nutritionists serve their clients efficiently using React for Frontend and node-based API for backend. Went into planning achitecture and database schema design to better plan the project.",
     color: "#E8E5CF",
-    projectLink: "https://himanshu.dev/projects/remplr",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/remplr`,
     linkText: "Checkout Project:Remplr 2.0",
   },
 
@@ -95,7 +96,7 @@ const TimelineData = [
     event:
       "Built database-driven application leveraging a Python framework, Flask, and integrated a PostgreSQL database. The development process involved formulating project proposals, meticulously planning data sourcing and API selection, developing user flows, and thoroughly documenting the project.",
     color: "#F9EFE3",
-    projectLink: "https://himanshu.dev/projects/remplr-veg",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/remplr-veg`,
     linkText: "Checkout Project: Remplr 1.0",
   },
   {
