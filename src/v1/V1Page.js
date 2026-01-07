@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import profileImage from "../static/images/himanshu.jpg";
-import services from "../services/servicesData";
 import timelineData from "../About/timelineData";
 import Projects from "../homepage/projects";
 import { withBasePath } from "../common/siteMeta";
@@ -49,7 +48,6 @@ const V1Nav = () => {
         <a href="#v1-timeline">Credibility</a>
         <a href="#v1-work">Work</a>
         <a href="#v1-proof">Proof</a>
-        <a href="#v1-services">Services</a>
         <a href="#v1-contact">Contact</a>
       </div>
       <div className="v1-nav-actions">
@@ -57,7 +55,7 @@ const V1Nav = () => {
           v0
         </Link>
         <a className="v1-button primary" href="#v1-contact">
-          Book a call
+          Contact me
         </a>
       </div>
     </nav>
@@ -107,7 +105,7 @@ const V1Page = () => {
               View case studies
             </a>
             <a className="v1-button ghost" href="#v1-contact">
-              Book a call
+              Contact me
             </a>
           </div>
         </div>
@@ -185,24 +183,6 @@ const V1Page = () => {
               <div className="v1-proof-card" key={point.title}>
                 <h3>{point.title}</h3>
                 <p>{point.detail}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="v1-section v1-services v1-reveal" id="v1-services">
-        <div className="v1-section-inner">
-          <h2>Services</h2>
-          <div className="v1-services-grid">
-            {services.map((service) => (
-              <div className="v1-service v1-reveal" key={service.category}>
-                <h3>{service.category}</h3>
-                <ul>
-                  {service.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
