@@ -1,9 +1,61 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import profileImage from "../static/images/himanshu.jpg";
+import services from "../services/servicesData";
+import timelineData from "../About/timelineData";
+import Projects from "../homepage/projects";
+import { withBasePath } from "../common/siteMeta";
 import "./v1.css";
 
+const featuredProjectKeys = ["beyondsnack", "elitekitchenfinds", "pathos"];
+const storyBeats = [
+  "I’m a front-end and full-stack engineer based in Vancouver, with a background in IT leadership and systems administration.",
+  "My work blends product thinking with hands-on engineering — turning fuzzy ideas into clear, scalable experiences.",
+  "I care about shipping reliable products fast, with UX that feels intentional and human.",
+];
+
+const credibilityStats = [
+  { label: "Frontend Experience", value: "3+ years" },
+  { label: "Full-stack Experience", value: "2+ years" },
+  { label: "Focus Areas", value: "E-commerce + AI" },
+];
+
+const V1Nav = () => {
+  return (
+    <nav className="v1-nav">
+      <div className="v1-nav-left">
+        <span className="v1-logo">HK</span>
+      </div>
+      <div className="v1-nav-links">
+        <a href="#v1-story">Story</a>
+        <a href="#v1-timeline">Credibility</a>
+        <a href="#v1-work">Work</a>
+        <a href="#v1-services">Services</a>
+        <a href="#v1-contact">Contact</a>
+      </div>
+      <div className="v1-nav-actions">
+        <Link className="v1-link-pill" to={withBasePath("/")}>
+          v0
+        </Link>
+        <a className="v1-button primary" href="#v1-contact">
+          Book a call
+        </a>
+      </div>
+    </nav>
+  );
+};
+
 const V1Page = () => {
+  const featuredProjects = Projects.filter((project) =>
+    featuredProjectKeys.includes(project.linkData)
+  );
+  const timelineHighlights = timelineData
+    .filter((item) => item.date && item.event)
+    .slice(0, 4);
+
   return (
     <div className="v1-page">
+      <V1Nav />
       <header className="v1-hero" id="v1-hero">
         <div className="v1-hero-content">
           <p className="v1-eyebrow">Product-minded engineer</p>
@@ -21,40 +73,84 @@ const V1Page = () => {
             </a>
           </div>
         </div>
+        <div className="v1-hero-portrait">
+          <img src={profileImage} alt="Himanshu Kumar" />
+        </div>
       </header>
 
       <section className="v1-section v1-story" id="v1-story">
         <div className="v1-section-inner">
           <h2>Story</h2>
-          <p>
-            From IT leadership and systems administration to full-stack product
-            engineering, I focus on building experiences that align business
-            goals with human-centered design.
-          </p>
+          <div className="v1-story-grid">
+            {storyBeats.map((beat, index) => (
+              <p key={index}>{beat}</p>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="v1-section v1-timeline" id="v1-timeline">
+      <section className="v1-section v1-credibility" id="v1-timeline">
         <div className="v1-section-inner">
           <h2>Credibility</h2>
-          <p>
-            3+ years in frontend, 2+ years in full-stack, and a track record of
-            shipping e-commerce and AI-powered platforms.
-          </p>
+          <div className="v1-stats">
+            {credibilityStats.map((stat) => (
+              <div className="v1-stat" key={stat.label}>
+                <p className="v1-stat-value">{stat.value}</p>
+                <p className="v1-stat-label">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="v1-timeline">
+            {timelineHighlights.map((item) => (
+              <div className="v1-timeline-item" key={item.date}>
+                <p className="v1-timeline-date">{item.date}</p>
+                <p className="v1-timeline-event">{item.event}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="v1-section v1-work" id="v1-work">
         <div className="v1-section-inner">
           <h2>Featured Work</h2>
-          <p>Case studies with outcomes, challenges, and learnings.</p>
+          <div className="v1-work-grid">
+            {featuredProjects.map((project) => (
+              <article className="v1-work-card" key={project.title}>
+                <div className="v1-work-copy">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <Link
+                    className="v1-link"
+                    to={withBasePath(`/projects/${project.linkData}`)}
+                  >
+                    View project details
+                  </Link>
+                </div>
+                <div className="v1-work-image">
+                  <img src={project.image} alt={project.title} />
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="v1-section v1-services" id="v1-services">
         <div className="v1-section-inner">
           <h2>Services</h2>
-          <p>Product strategy, design, and engineering for modern web teams.</p>
+          <div className="v1-services-grid">
+            {services.map((service) => (
+              <div className="v1-service" key={service.category}>
+                <h3>{service.category}</h3>
+                <ul>
+                  {service.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -65,14 +161,19 @@ const V1Page = () => {
             Ready to collaborate? Reach out via LinkedIn or schedule a discovery
             call.
           </p>
-          <a
-            className="v1-button primary"
-            href="https://www.linkedin.com/in/himanshukumar3/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Connect on LinkedIn
-          </a>
+          <div className="v1-contact-actions">
+            <a
+              className="v1-button primary"
+              href="https://www.linkedin.com/in/himanshukumar3/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Connect on LinkedIn
+            </a>
+            <a className="v1-button ghost" href="mailto:himanshuk.kumar01@gmail.com">
+              Send an email
+            </a>
+          </div>
         </div>
       </section>
     </div>

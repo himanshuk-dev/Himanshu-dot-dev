@@ -4,8 +4,55 @@
   min-height: 100vh;
 }
 
+.v1-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 8vw;
+  position: sticky;
+  top: 0;
+  background: #f8f5f0;
+  z-index: 10;
+}
+
+.v1-nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.v1-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+.v1-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.v1-logo {
+  display: inline-flex;
+  border: 2px solid #1c1b19;
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem;
+  font-weight: 700;
+}
+
+.v1-link-pill {
+  border: 2px solid #1c1b19;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+}
+
 .v1-hero {
-  padding: 10vh 8vw 8vh;
+  padding: 8vh 8vw 8vh;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
 }
 
 .v1-hero-content {
@@ -55,6 +102,13 @@
   color: #1c1b19;
 }
 
+.v1-hero-portrait img {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  max-height: 420px;
+}
+
 .v1-section {
   padding: 6vh 8vw;
 }
@@ -71,4 +125,98 @@
 .v1-section p {
   line-height: 1.7;
   margin: 0;
+}
+
+.v1-story-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.v1-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.v1-stat {
+  border: 1px solid #1c1b19;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.v1-stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.v1-timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.v1-work-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.v1-work-card {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: center;
+  border: 1px solid #1c1b19;
+  border-radius: 24px;
+  padding: 1.5rem;
+  background: #fffaf2;
+}
+
+.v1-work-image img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.v1-link {
+  display: inline-flex;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.v1-services-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.v1-service {
+  border: 1px solid #1c1b19;
+  border-radius: 18px;
+  padding: 1.5rem;
+  background: #fffaf2;
+}
+
+.v1-service ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.v1-contact-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .v1-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .v1-nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
