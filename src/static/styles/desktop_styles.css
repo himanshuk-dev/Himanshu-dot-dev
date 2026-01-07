@@ -251,6 +251,19 @@
     text-wrap: nowrap;
     width: 50%;
   }
+
+  .navbar-version {
+    display: flex;
+    gap: 8px;
+    margin-right: 2%;
+  }
+
+  .navbar-version a {
+    border: 2px solid black;
+    border-radius: 999px;
+    font-size: 90%;
+    padding: 4px 10px;
+  }
   .navbar-right a:hover {
     color: black;
     border: 2px solid black;

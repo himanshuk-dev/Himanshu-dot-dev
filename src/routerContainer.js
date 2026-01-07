@@ -1,5 +1,11 @@
 import React, { useRef } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import Home from "./homepage/home";
 import Navbar from "./common/navBar";
 import ProjectPageContainer from "./project/projectPageContainer";
@@ -12,18 +18,16 @@ import Work from "./homepage/work";
 import Resume from "./common/Resume";
 import FrontEndResume from "./common/FrontEndResume";
 import BackEndResume from "./common/BackEndResume";
-import { SITE_BASE_PATH } from "./common/siteMeta";
+import { SITE_BASE_PATH, SITE_V1_BASE_PATH } from "./common/siteMeta";
+import V1Page from "./v1/V1Page";
 
-const RouteContainer = () => {
-  const footerRef = useRef(null);
-
-  const handleContactClick = () => {
-    footerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+const RouteShell = ({ footerRef, handleContactClick }) => {
+  const location = useLocation();
+  const isV1 = location.pathname.startsWith(SITE_V1_BASE_PATH);
 
   return (
-    <Router>
-      <Navbar handleContactClick={handleContactClick} />
+    <>
+      {!isV1 && <Navbar handleContactClick={handleContactClick} />}
       <Routes>
         <Route path="/" element={<Navigate to={SITE_BASE_PATH} replace />} />
         <Route path={SITE_BASE_PATH} element={<Home footerRef={footerRef} />} />
@@ -40,9 +44,26 @@ const RouteContainer = () => {
         <Route path={`${SITE_BASE_PATH}/resume/full-stack`} element={<Resume />} />
         <Route path={`${SITE_BASE_PATH}/resume/front-end`} element={<FrontEndResume />} />
         <Route path={`${SITE_BASE_PATH}/resume/back-end`} element={<BackEndResume />} />
+        <Route path={SITE_V1_BASE_PATH} element={<V1Page />} />
       </Routes>
+      {!isV1 && <Footer footerRef={footerRef} />}
+    </>
+  );
+};
 
-      <Footer footerRef={footerRef} />
+const RouteContainer = () => {
+  const footerRef = useRef(null);
+
+  const handleContactClick = () => {
+    footerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <Router>
+      <RouteShell
+        footerRef={footerRef}
+        handleContactClick={handleContactClick}
+      />
     </Router>
   );
 };

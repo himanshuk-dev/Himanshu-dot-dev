@@ -236,6 +236,19 @@
     width: 75%;
   }
 
+  .navbar-version {
+    display: flex;
+    gap: 8px;
+    margin: 2% 0;
+  }
+
+  .navbar-version a {
+    border: 2px solid black;
+    border-radius: 999px;
+    font-size: 90%;
+    padding: 4px 10px;
+  }
+
   .navbar-right a,
   .navbar span {
     margin: 1%;
