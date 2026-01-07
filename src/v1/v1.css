@@ -253,6 +253,23 @@ html {
   margin-top: 2rem;
 }
 
+.v1-proof-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.v1-proof-card {
+  border: 1px solid var(--v1-ink);
+  border-radius: 18px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.v1-proof-card h3 {
+  margin-top: 0;
+}
+
 .v1-service {
   border: 1px solid var(--v1-ink);
   border-radius: 18px;

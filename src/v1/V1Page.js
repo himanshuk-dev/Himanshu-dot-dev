@@ -20,9 +20,27 @@ const credibilityStats = [
   { label: "Focus Areas", value: "E-commerce + AI" },
 ];
 
+const proofPoints = [
+  {
+    title: "Springboard Hackathon Winner",
+    detail:
+      "Co-led an award-winning AI platform selected out of hundreds of ideas.",
+  },
+  {
+    title: "Beyond Snack Launch",
+    detail:
+      "Built and launched a full-stack e-commerce brand with Stripe and AWS.",
+  },
+  {
+    title: "Client-first Delivery",
+    detail:
+      "Shipped multiple production apps across retail, AI, and service brands.",
+  },
+];
+
 const V1Nav = () => {
   return (
-    <nav className="v1-nav">
+    <nav className="v1-nav" aria-label="Primary">
       <div className="v1-nav-left">
         <span className="v1-logo">HK</span>
       </div>
@@ -30,6 +48,7 @@ const V1Nav = () => {
         <a href="#v1-story">Story</a>
         <a href="#v1-timeline">Credibility</a>
         <a href="#v1-work">Work</a>
+        <a href="#v1-proof">Proof</a>
         <a href="#v1-services">Services</a>
         <a href="#v1-contact">Contact</a>
       </div>
@@ -153,6 +172,20 @@ const V1Page = () => {
                   <img src={project.image} alt={project.title} />
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="v1-section v1-proof v1-reveal" id="v1-proof">
+        <div className="v1-section-inner">
+          <h2>Proof & Momentum</h2>
+          <div className="v1-proof-grid">
+            {proofPoints.map((point) => (
+              <div className="v1-proof-card" key={point.title}>
+                <h3>{point.title}</h3>
+                <p>{point.detail}</p>
+              </div>
             ))}
           </div>
         </div>
