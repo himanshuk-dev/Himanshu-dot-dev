@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import profileImage from "../static/images/himanshu.jpg";
 import timelineData from "../About/timelineData";
 import Projects from "../homepage/projects";
+import ProjectData from "../project/projectData";
 import { withBasePath } from "../common/siteMeta";
 import "./v1.css";
 
@@ -18,6 +19,27 @@ const credibilityStats = [
   { label: "Full-stack Experience", value: "2+ years" },
   { label: "Focus Areas", value: "E-commerce + AI" },
 ];
+
+const featuredCaseStudyMeta = {
+  beyondsnack: {
+    impact: [
+      "Launched full-stack e-commerce brand with Stripe checkout.",
+      "Built admin tooling for order and fulfillment workflows.",
+    ],
+  },
+  elitekitchenfinds: {
+    impact: [
+      "Delivered a curated, high-conversion storefront.",
+      "Optimized UX with responsive, accessible UI components.",
+    ],
+  },
+  pathos: {
+    impact: [
+      "Award-winning AI empathy platform (Springboard Hackathon).",
+      "Real-time suggestions to improve workplace communication.",
+    ],
+  },
+};
 
 const proofPoints = [
   {
@@ -65,7 +87,16 @@ const V1Nav = () => {
 const V1Page = () => {
   const featuredProjects = Projects.filter((project) =>
     featuredProjectKeys.includes(project.linkData)
-  );
+  ).map((project) => {
+    const projectDetails = ProjectData[project.linkData];
+    const meta = featuredCaseStudyMeta[project.linkData] || {};
+    return {
+      ...project,
+      role: projectDetails?.role,
+      techStack: projectDetails?.techStack,
+      impact: meta.impact || [],
+    };
+  });
   const timelineHighlights = timelineData
     .filter((item) => item.date && item.event)
     .slice(0, 4);
@@ -153,23 +184,52 @@ const V1Page = () => {
       <section className="v1-section v1-work v1-reveal" id="v1-work">
         <div className="v1-section-inner">
           <h2>Featured Work</h2>
+          <p className="v1-section-lead">
+            A few deep-dive case studies focused on impact, role, and stack.
+          </p>
           <div className="v1-work-grid">
             {featuredProjects.map((project) => (
-              <article className="v1-work-card v1-reveal" key={project.title}>
+              <Link
+                key={project.title}
+                className="v1-work-card v1-reveal"
+                to={withBasePath(`/projects/${project.linkData}`)}
+                aria-label={`View ${project.title} project details`}
+              >
                 <div className="v1-work-copy">
-                  <h3>{project.title}</h3>
+                  <div className="v1-work-header">
+                    <h3>{project.title}</h3>
+                    <div className="v1-work-thumb">
+                      <img src={project.image} alt={project.title} />
+                    </div>
+                  </div>
                   <p>{project.description}</p>
-                  <Link
-                    className="v1-link"
-                    to={withBasePath(`/projects/${project.linkData}`)}
-                  >
-                    View project details
-                  </Link>
+                  <div className="v1-work-meta">
+                    {project.role && (
+                      <div>
+                        <span className="v1-label">Role</span>
+                        <p>{project.role}</p>
+                      </div>
+                    )}
+                    {project.techStack && (
+                      <div>
+                        <span className="v1-label">Stack</span>
+                        <p>{project.techStack}</p>
+                      </div>
+                    )}
+                    {project.impact.length > 0 && (
+                      <div>
+                        <span className="v1-label">Impact</span>
+                        <ul>
+                          {project.impact.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="v1-work-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
-              </article>
+                <span className="v1-card-cta">Click to view project details →</span>
+              </Link>
             ))}
           </div>
         </div>
