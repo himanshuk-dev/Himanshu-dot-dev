@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { withBasePath } from "../common/siteMeta";
 import "./v1.css";
@@ -12,9 +12,24 @@ const V1_SECTIONS = [
 ];
 
 const V1Nav = () => {
+  const [theme, setTheme] = useState("light");
   const location = useLocation();
   const navigate = useNavigate();
   const isV1Home = location.pathname === "/v1";
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem("v1-theme");
+    const initial = stored || "light";
+    setTheme(initial);
+    document.documentElement.setAttribute("data-theme", initial);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.setAttribute("data-theme", next);
+    window.localStorage.setItem("v1-theme", next);
+  };
 
   const handleSectionClick = (sectionId) => {
     if (isV1Home) {
@@ -49,6 +64,18 @@ const V1Nav = () => {
         <Link className="v1-link-pill" to={withBasePath("/")}>
           v0
         </Link>
+        <button
+          type="button"
+          className={`v1-theme-toggle ${theme === "dark" ? "is-dark" : ""}`}
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          <span className="v1-theme-label">Light</span>
+          <span className="v1-theme-track">
+            <span className="v1-theme-thumb" />
+          </span>
+          <span className="v1-theme-label">Dark</span>
+        </button>
         <button
           type="button"
           className="v1-button primary"
