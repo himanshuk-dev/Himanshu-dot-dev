@@ -267,9 +267,9 @@ const V1Page = () => {
               >
                 <div className="v1-work-copy">
                   <div className="v1-work-header">
-                    <h3>{project.title}</h3>
                     <div className="v1-work-thumb">
                       <img src={project.image} alt={project.title} />
+                      <h3>{project.title}</h3>
                     </div>
                   </div>
                   <p>{project.description}</p>
@@ -323,8 +323,7 @@ const V1Page = () => {
         <div className="v1-section-inner">
           <h2>Let’s build something</h2>
           <p>
-            Ready to collaborate? Reach out via LinkedIn or schedule a discovery
-            call.
+            Ready to collaborate? Reach out via LinkedIn or send an email.
           </p>
           <div className="v1-contact-actions">
             <a
