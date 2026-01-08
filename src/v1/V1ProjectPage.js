@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import V1Nav from "./V1Nav";
+import useTiltHover from "./useTiltHover";
 import "./v1Project.css";
 
 const V1ProjectPage = ({ projectData }) => {
+  useTiltHover();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

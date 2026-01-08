@@ -5,6 +5,7 @@ import Projects from "../homepage/projects";
 import ProjectData from "../project/projectData";
 import { withV1BasePath } from "../common/siteMeta";
 import V1Nav from "./V1Nav";
+import useTiltHover from "./useTiltHover";
 import "./v1.css";
 
 const featuredProjectKeys = [
@@ -86,6 +87,8 @@ const proofPoints = [
 ];
 
 const V1Page = () => {
+  useTiltHover();
+
   const featuredProjects = Projects.filter((project) =>
     featuredProjectKeys.includes(project.linkData)
   ).map((project) => {
