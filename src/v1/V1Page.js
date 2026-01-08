@@ -15,15 +15,21 @@ const featuredProjectKeys = [
   "remplr-veg",
 ];
 const storyBeats = [
-  "I’m a front-end and full-stack engineer based in Vancouver, with a background in IT leadership and systems administration.",
-  "My work blends product thinking with hands-on engineering — turning fuzzy ideas into clear, scalable experiences.",
-  "I care about shipping reliable products fast, with UX that feels intentional and human.",
+  "Vancouver-based front-end and full-stack engineer with an IT leadership background.",
+  "I turn ambiguous ideas into shippable products with strong UX and clear architecture.",
+  "Focused on reliability, performance, and collaboration in cross-functional teams.",
 ];
 
 const credibilityStats = [
   { label: "Frontend Experience", value: "3+ years" },
   { label: "Full-stack Experience", value: "2+ years" },
   { label: "Focus Areas", value: "E-commerce + AI" },
+];
+
+const storyTldr = [
+  "Frontend + full-stack engineer",
+  "Product-minded, impact-driven",
+  "E-commerce and AI experience",
 ];
 
 const featuredCaseStudyMeta = {
@@ -170,6 +176,16 @@ const V1Page = () => {
             {storyBeats.map((beat, index) => (
               <p key={index}>{beat}</p>
             ))}
+          </div>
+          <div className="v1-tldr">
+            <span className="v1-label">TL;DR</span>
+            <div className="v1-tldr-pills">
+              {storyTldr.map((item) => (
+                <span className="v1-pill" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

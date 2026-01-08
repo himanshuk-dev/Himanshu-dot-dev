@@ -200,6 +200,29 @@ html {
   margin-top: 2rem;
 }
 
+.v1-tldr {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--v1-ink);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.v1-tldr-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.v1-pill {
+  border: 1px solid var(--v1-ink);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.9rem;
+  background: rgba(255, 250, 242, 0.9);
+}
+
 .v1-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(180px, 1fr));
