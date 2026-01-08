@@ -7,7 +7,13 @@ import ProjectData from "../project/projectData";
 import { withBasePath } from "../common/siteMeta";
 import "./v1.css";
 
-const featuredProjectKeys = ["beyondsnack", "elitekitchenfinds", "pathos"];
+const featuredProjectKeys = [
+  "beyondsnack",
+  "elitekitchenfinds",
+  "pathos",
+  "remplr",
+  "remplr-veg",
+];
 const storyBeats = [
   "I’m a front-end and full-stack engineer based in Vancouver, with a background in IT leadership and systems administration.",
   "My work blends product thinking with hands-on engineering — turning fuzzy ideas into clear, scalable experiences.",
@@ -37,6 +43,18 @@ const featuredCaseStudyMeta = {
     impact: [
       "Award-winning AI empathy platform (Springboard Hackathon).",
       "Real-time suggestions to improve workplace communication.",
+    ],
+  },
+  remplr: {
+    impact: [
+      "Built a meal planner for nutritionists with auth and planning flows.",
+      "Designed data models for recipes, clients, and meal tracking.",
+    ],
+  },
+  "remplr-veg": {
+    impact: [
+      "Shipped MVP focused on vegetarian meal planning workflows.",
+      "Integrated Flask + PostgreSQL for a data-driven experience.",
     ],
   },
 };
