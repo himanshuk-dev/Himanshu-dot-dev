@@ -16,8 +16,9 @@ const featuredProjectKeys = [
 ];
 const storyBeats = [
   "Vancouver-based front-end and full-stack engineer with an IT leadership background.",
-  "I turn ambiguous ideas into shippable products with strong UX and clear architecture.",
-  "Focused on reliability, performance, and collaboration in cross-functional teams.",
+  "Started self-learning in July 2021 and completed LinkedIn Learning in November 2021 to build web fundamentals.",
+  "Completed the 1-year Full Stack Software Engineering program at Springboard to transition into software engineering.",
+  "I turn ambiguous ideas into shippable products with strong UX and clear architecture, focused on reliability and collaboration.",
 ];
 
 const credibilityStats = [
@@ -30,6 +31,7 @@ const storyTldr = [
   "Frontend + full-stack engineer",
   "Product-minded, impact-driven",
   "E-commerce and AI experience",
+  "Springboard 1-year program",
 ];
 
 const featuredCaseStudyMeta = {
@@ -121,9 +123,43 @@ const V1Page = () => {
       impact: meta.impact || [],
     };
   });
-  const timelineHighlights = timelineData
-    .filter((item) => item.date && item.event)
-    .slice(0, 4);
+  const timelineHighlights = [
+    {
+      date: "August 2025 - Present",
+      description:
+        "At CanAI Garage (PSPC), I build production-oriented, responsible AI workflows that support operational decision-making. I focus on backend services, data validation, and UX-focused feedback loops that improve reliability, and I mentor developers through code reviews, pairing, and unblocking work across the team.",
+    },
+    {
+      date: "September 2024 - August 2025",
+      description:
+        "I led the full-stack build and launch of Beyond Snack, owning the e-commerce experience end to end. That included checkout reliability with Stripe, admin tooling for operations, and customer workflows that kept the product and brand experience consistent.",
+    },
+    {
+      date: "July 2024 - September 2024",
+      description:
+        "At Iter Innovandi, I helped shape a lead-gen platform for an AI startup, pairing frontend systems with automation and analytics to strengthen conversion workflows.",
+    },
+    {
+      date: "April 2024 - June 2024",
+      description:
+        "At Wizardry Labs, I built TypeScript and Next.js applications and optimized data access patterns with SQL/Prisma, while improving Docker workflows for smoother deployments.",
+    },
+    {
+      date: "December 2023 - April 2024",
+      description:
+        "I delivered high-conversion storefronts using Next.js and React, focusing on accessible, responsive UI patterns that improved the shopping experience.",
+    },
+    {
+      date: "November 2022 - October 2023",
+      description:
+        "I completed the 1-year Full Stack Software Engineering program at Springboard, shipping multiple full-stack apps and sharpening my review and collaboration habits.",
+    },
+    {
+      date: "July 2021 - November 2021",
+      description:
+        "I began self-learning web development in July 2021 and completed LinkedIn Learning in November 2021, building early projects that validated the transition into software engineering.",
+    },
+  ];
 
   useEffect(() => {
     const elements = document.querySelectorAll(".v1-reveal");
@@ -208,7 +244,7 @@ const V1Page = () => {
             {timelineHighlights.map((item) => (
               <div className="v1-timeline-item" key={item.date}>
                 <p className="v1-timeline-date">{item.date}</p>
-                <p className="v1-timeline-event">{item.event}</p>
+                <p className="v1-timeline-event">{item.description}</p>
               </div>
             ))}
           </div>

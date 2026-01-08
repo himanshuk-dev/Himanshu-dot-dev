@@ -10,13 +10,19 @@ import { SITE_BASE_PATH } from "../common/siteMeta";
 
 const TimelineData = [
   {
-  date: "September 2024 - Present",
-  event:
-    "Developed and launched Beyond Snack, a clean-label food brand focused on protein-rich, no-added-sugar snacks. I'm leading all aspects from product development to full-stack platform implementation using React, Node.js, PostgreSQL, and AWS. Currently managing e-commerce, fulfillment, customer engagement, and admin dashboard systems.",
-  color: "#F0F8F8",
-  projectLink: "https://beyondsnack.ca/",
+    date: "August 2025 - Present",
+    event:
+      "Software Engineer / IT Developer at CanAI Garage (Public Services and Procurement Canada). Building responsible, production-oriented AI-enabled systems that support operational decision-making. Contributing across backend services, data validation workflows, and UX-focused feedback mechanisms, while supporting code reviews, agile delivery, and team enablement.",
+    color: "#F0F8F8",
+  },
+  {
+    date: "September 2024 - August 2025",
+    event:
+      "Developed and launched Beyond Snack, a clean-label food brand focused on protein-rich, no-added-sugar snacks. Led product development and full-stack platform implementation using React, Node.js, PostgreSQL, and AWS. Managed e-commerce, fulfillment, customer engagement, and admin dashboard systems.",
+    color: "#F0F8F8",
+    projectLink: "https://beyondsnack.ca/",
     linkText: "Checkout: Beyond Snack",
-},
+  },
   {
     date: "July 2024 - September 2024",
     event:
@@ -50,7 +56,7 @@ const TimelineData = [
   {
     date: "October 2023",
     event:
-      " Completed Software Engineering (Full Stack) program at Springboard where was actively involved in code reviews and built several Full Stack applications using React.js at Frontend and Node-based API for backend and more. ",
+      "Completed the 1-year Software Engineering (Full Stack) program at Springboard, transitioning fully into software engineering. Built multiple full-stack applications with React on the frontend and Node-based APIs on the backend, and participated in code reviews.",
     color: "#EEF5E0",
     icon: star,
   },
@@ -107,7 +113,7 @@ const TimelineData = [
   {
     date: "November 2022",
     event:
-      "Started Full Stack Software Engineering program with Springboard. The journey commenced with a thorough review and reinforcement of developer fundamentals, focusing on object-oriented programming.",
+      "Started the 1-year Full Stack Software Engineering program at Springboard. The journey commenced with a thorough review of developer fundamentals, focusing on object-oriented programming.",
     color: "#F8FFF2",
   },
   {
@@ -118,7 +124,7 @@ const TimelineData = [
   {
     date: "September 2022",
     event:
-      "At this point, I recognized that I had a solid foundation and decided to take the next step in elevating my development skills. This led me to discover Springboard. I conducted thorough research, engaged with alumni, gained insights into their mentorship approach, and connected with the admissions team at Springboard.",
+      "With a growing foundation from self-learning and online courses, I decided to transition into software engineering. I researched Springboard, connected with alumni, and prepared for the Full Stack program.",
     color: "#F9EFE3",
   },
 
