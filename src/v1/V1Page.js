@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import profileImage from "../static/images/himanshu.jpg";
-import timelineData from "../About/timelineData";
 import Projects from "../homepage/projects";
 import ProjectData from "../project/projectData";
-import { withBasePath } from "../common/siteMeta";
+import { withV1BasePath } from "../common/siteMeta";
+import V1Nav from "./V1Nav";
 import "./v1.css";
 
 const featuredProjectKeys = [
@@ -84,31 +84,6 @@ const proofPoints = [
       "Shipped multiple production apps across retail, AI, and service brands.",
   },
 ];
-
-const V1Nav = () => {
-  return (
-    <nav className="v1-nav" aria-label="Primary">
-      <div className="v1-nav-left">
-        <span className="v1-logo">HK</span>
-      </div>
-      <div className="v1-nav-links">
-        <a href="#v1-story">Story</a>
-        <a href="#v1-timeline">Credibility</a>
-        <a href="#v1-work">Work</a>
-        <a href="#v1-proof">Proof</a>
-        <a href="#v1-contact">Contact</a>
-      </div>
-      <div className="v1-nav-actions">
-        <Link className="v1-link-pill" to={withBasePath("/")}>
-          v0
-        </Link>
-        <a className="v1-button primary" href="#v1-contact">
-          Contact me
-        </a>
-      </div>
-    </nav>
-  );
-};
 
 const V1Page = () => {
   const featuredProjects = Projects.filter((project) =>
@@ -262,7 +237,7 @@ const V1Page = () => {
               <Link
                 key={project.title}
                 className="v1-work-card v1-reveal"
-                to={withBasePath(`/projects/${project.linkData}`)}
+                to={withV1BasePath(`/projects/${project.linkData}`)}
                 aria-label={`View ${project.title} project details`}
               >
                 <div className="v1-work-copy">

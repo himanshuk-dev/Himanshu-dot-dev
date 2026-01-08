@@ -20,6 +20,7 @@ import FrontEndResume from "./common/FrontEndResume";
 import BackEndResume from "./common/BackEndResume";
 import { SITE_BASE_PATH, SITE_V1_BASE_PATH } from "./common/siteMeta";
 import V1Page from "./v1/V1Page";
+import V1ProjectPageContainer from "./v1/V1ProjectPageContainer";
 
 const RouteShell = ({ footerRef, handleContactClick }) => {
   const location = useLocation();
@@ -45,6 +46,10 @@ const RouteShell = ({ footerRef, handleContactClick }) => {
         <Route path={`${SITE_BASE_PATH}/resume/front-end`} element={<FrontEndResume />} />
         <Route path={`${SITE_BASE_PATH}/resume/back-end`} element={<BackEndResume />} />
         <Route path={SITE_V1_BASE_PATH} element={<V1Page />} />
+        <Route
+          path={`${SITE_V1_BASE_PATH}/projects/:projectKey`}
+          element={<V1ProjectPageContainer />}
+        />
       </Routes>
       {!isV1 && <Footer footerRef={footerRef} />}
     </>

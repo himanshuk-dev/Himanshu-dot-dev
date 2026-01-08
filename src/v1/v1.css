@@ -81,6 +81,17 @@ html {
   font-weight: 600;
 }
 
+.v1-nav-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--v1-ink);
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .v1-nav-actions {
   display: flex;
   align-items: center;
