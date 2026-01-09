@@ -1,6 +1,13 @@
 import React from "react";
 
-const ResumeModal = ({ isOpen, isLoading, onClose, onLoad, resumeUrl }) => {
+const ResumeModal = ({
+  isOpen,
+  isLoading,
+  onClose,
+  onLoad,
+  resumeUrl,
+  previewUrl,
+}) => {
   if (!isOpen) {
     return null;
   }
@@ -10,8 +17,13 @@ const ResumeModal = ({ isOpen, isLoading, onClose, onLoad, resumeUrl }) => {
       <div className="v1-modal">
         <div className="v1-modal-header">
           <h3>Resume Preview</h3>
-          <button type="button" className="v1-modal-close" onClick={onClose}>
-            Close
+          <button
+            type="button"
+            className="v1-modal-close"
+            onClick={onClose}
+            aria-label="Close resume preview"
+          >
+            ×
           </button>
         </div>
         {isLoading && (
@@ -19,14 +31,22 @@ const ResumeModal = ({ isOpen, isLoading, onClose, onLoad, resumeUrl }) => {
         )}
         <iframe
           className="v1-resume-frame"
-          src={resumeUrl}
+          src={previewUrl || resumeUrl}
           title="Resume preview"
           onLoad={onLoad}
         />
         <div className="v1-modal-footer">
-          <a className="v1-button ghost" href={resumeUrl}>
-            Open full resume
-          </a>
+          <div className="v1-modal-actions">
+            <span className="v1-modal-note">Download available via Drive</span>
+            <a
+              className="v1-button ghost"
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open full resume
+            </a>
+          </div>
         </div>
       </div>
     </div>

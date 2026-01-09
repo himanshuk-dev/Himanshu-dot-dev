@@ -602,6 +602,19 @@ html {
 .v1-modal-footer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.v1-modal-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.v1-modal-note {
+  font-size: 0.85rem;
+  color: var(--v1-sage);
 }
 
 @media (max-width: 768px) {

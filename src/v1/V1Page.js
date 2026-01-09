@@ -96,6 +96,10 @@ const V1Page = () => {
   useTiltHover();
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isResumeLoading, setIsResumeLoading] = useState(false);
+  const resumeUrl =
+    "https://drive.google.com/file/d/1QJHA5miIfpKiWbGoUKes6GpPl4Ti1v6w/view?usp=sharing";
+  const resumePreviewUrl =
+    "https://drive.google.com/file/d/1QJHA5miIfpKiWbGoUKes6GpPl4Ti1v6w/preview";
 
   const featuredProjects = Projects.filter((project) =>
     featuredProjectKeys.includes(project.linkData)
@@ -197,7 +201,8 @@ const V1Page = () => {
       <ResumeModal
         isOpen={isResumeOpen}
         isLoading={isResumeLoading}
-        resumeUrl={withBasePath("/resume/full-stack")}
+        resumeUrl={resumeUrl}
+        previewUrl={resumePreviewUrl}
         onClose={handleResumeClose}
         onLoad={() => setIsResumeLoading(false)}
       />
