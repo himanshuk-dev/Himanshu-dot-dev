@@ -13,8 +13,13 @@ const ResumeModal = ({
   }
 
   return (
-    <div className="v1-modal-overlay" role="dialog" aria-modal="true">
-      <div className="v1-modal">
+    <div
+      className="v1-modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      onClick={onClose}
+    >
+      <div className="v1-modal" onClick={(event) => event.stopPropagation()}>
         <div className="v1-modal-header">
           <h3>Resume Preview</h3>
           <button
