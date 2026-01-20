@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Box, Button, Container, Typography } from "@mui/material";
 import V1Nav from "./V1Nav";
 import useTiltHover from "./useTiltHover";
 import "./v1Project.css";
@@ -46,149 +47,169 @@ const V1ProjectPage = ({ projectData }) => {
   ].filter((item) => item.src);
 
   return (
-    <div className="v1-page v1-project-page">
+    <Box className="v1-page v1-project-page">
       <V1Nav />
-      <header className="v1-project-hero">
-        <div className="v1-project-hero-content">
-          <p className="v1-eyebrow">Case Study</p>
-          <h1>{projectName}</h1>
-          <p className="v1-project-description">{description}</p>
+      <Box component="header" className="v1-project-hero">
+        <Box className="v1-project-hero-content">
+          <Typography className="v1-eyebrow" component="p">
+            Case Study
+          </Typography>
+          <Typography component="h1">{projectName}</Typography>
+          <Typography className="v1-project-description" component="p">
+            {description}
+          </Typography>
           {badge && (
-            <div className="v1-project-badge">
-              <img src={badge} alt="Project badge" />
-            </div>
+            <Box className="v1-project-badge">
+              <Box component="img" src={badge} alt="Project badge" />
+            </Box>
           )}
-          <div className="v1-project-meta">
+          <Box className="v1-project-meta">
             {role && (
-              <div>
-                <span className="v1-label">Role</span>
-                <p>{role}</p>
-              </div>
+              <Box>
+                <Typography className="v1-label" component="span">
+                  Role
+                </Typography>
+                <Typography component="p">{role}</Typography>
+              </Box>
             )}
             {techStack && (
-              <div>
-                <span className="v1-label">Stack</span>
-                <p>{techStack}</p>
-              </div>
+              <Box>
+                <Typography className="v1-label" component="span">
+                  Stack
+                </Typography>
+                <Typography component="p">{techStack}</Typography>
+              </Box>
             )}
             {timeline && (
-              <div>
-                <span className="v1-label">Timeline</span>
-                <p>{timeline}</p>
-              </div>
+              <Box>
+                <Typography className="v1-label" component="span">
+                  Timeline
+                </Typography>
+                <Typography component="p">{timeline}</Typography>
+              </Box>
             )}
-          </div>
+          </Box>
           {links.length > 0 && (
-            <div className="v1-project-links">
+            <Box className="v1-project-links">
               {links.map((link) => (
-                <a
+                <Button
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="v1-button ghost"
+                  component="a"
+                  disableElevation
+                  disableRipple
                 >
                   {link.label}
-                </a>
+                </Button>
               ))}
-            </div>
+            </Box>
           )}
-        </div>
-        <div className="v1-project-hero-media">
+        </Box>
+        <Box className="v1-project-hero-media">
           {demoVideo ? (
-            <div className="v1-project-video">
-              <iframe
+            <Box className="v1-project-video">
+              <Box
+                component="iframe"
                 src={demoVideo}
                 title={`${projectName} demo`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
-            </div>
+              />
+            </Box>
           ) : (
             backgroundImage && (
-              <img src={backgroundImage} alt={projectName} />
+              <Box component="img" src={backgroundImage} alt={projectName} />
             )
           )}
-        </div>
-      </header>
+        </Box>
+      </Box>
 
-      <section className="v1-project-section">
-        <div className="v1-section-inner">
-          <h2>Development Process</h2>
+      <Box component="section" className="v1-project-section">
+        <Container className="v1-section-inner" disableGutters maxWidth={false}>
+          <Typography component="h2">Development Process</Typography>
           {processImages.length > 0 && (
-            <div className="v1-project-gallery">
+            <Box className="v1-project-gallery">
               {processImages.map((item) => (
-                <div className="v1-project-image" key={item.label}>
-                  <h3>{item.label}</h3>
-                  <img src={item.src} alt={item.label} />
-                </div>
+                <Box className="v1-project-image" key={item.label}>
+                  <Typography component="h3">{item.label}</Typography>
+                  <Box component="img" src={item.src} alt={item.label} />
+                </Box>
               ))}
-            </div>
+            </Box>
           )}
           {devFlow?.headings && (
-            <div className="v1-project-devflow">
+            <Box className="v1-project-devflow">
               {devFlow.headings.map((group) => (
-                <div className="v1-project-devflow-group" key={group.heading}>
-                  <h3>{group.heading}</h3>
-                  <div className="v1-project-devflow-steps">
+                <Box className="v1-project-devflow-group" key={group.heading}>
+                  <Typography component="h3">{group.heading}</Typography>
+                  <Box className="v1-project-devflow-steps">
                     {Object.values(group.steps).map((step) => (
-                      <div className="v1-project-step" key={step.header}>
-                        <h4>{step.header}</h4>
-                        <p>{step.text}</p>
-                      </div>
+                      <Box className="v1-project-step" key={step.header}>
+                        <Typography component="h4">{step.header}</Typography>
+                        <Typography component="p">{step.text}</Typography>
+                      </Box>
                     ))}
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               ))}
-            </div>
+            </Box>
           )}
-        </div>
-      </section>
+        </Container>
+      </Box>
 
       {keyChallenges && (
-        <section className="v1-project-section">
-          <div className="v1-section-inner">
-            <h2>Key Challenges</h2>
-            <div className="v1-project-challenges">
+        <Box component="section" className="v1-project-section">
+          <Container className="v1-section-inner" disableGutters maxWidth={false}>
+            <Typography component="h2">Key Challenges</Typography>
+            <Box className="v1-project-challenges">
               {keyChallenges.map((item) => (
-                <div className="v1-project-challenge" key={item.header}>
-                  <h3>{item.header}</h3>
-                  {item.challenge && <p>{item.challenge}</p>}
-                  {item.solution && <p>{item.solution}</p>}
-                </div>
+                <Box className="v1-project-challenge" key={item.header}>
+                  <Typography component="h3">{item.header}</Typography>
+                  {item.challenge && (
+                    <Typography component="p">{item.challenge}</Typography>
+                  )}
+                  {item.solution && (
+                    <Typography component="p">{item.solution}</Typography>
+                  )}
+                </Box>
               ))}
-            </div>
-          </div>
-        </section>
+            </Box>
+          </Container>
+        </Box>
       )}
 
       {learnings && (
-        <section className="v1-project-section">
-          <div className="v1-section-inner">
-            <h2>What I Learned</h2>
-            <div className="v1-project-learnings">
+        <Box component="section" className="v1-project-section">
+          <Container className="v1-section-inner" disableGutters maxWidth={false}>
+            <Typography component="h2">What I Learned</Typography>
+            <Box className="v1-project-learnings">
               {learnings.map((item) => (
-                <div className="v1-project-learning" key={item.header || item.text}>
-                  {item.header && <h3>{item.header}</h3>}
-                  <p>{item.text}</p>
-                </div>
+                <Box className="v1-project-learning" key={item.header || item.text}>
+                  {item.header && <Typography component="h3">{item.header}</Typography>}
+                  <Typography component="p">{item.text}</Typography>
+                </Box>
               ))}
-            </div>
+            </Box>
             {notes && (
-              <div className="v1-project-notes">
-                <span className="v1-label">Notes</span>
+              <Box className="v1-project-notes">
+                <Typography className="v1-label" component="span">
+                  Notes
+                </Typography>
                 <ul>
                   {notes.map((note) => (
                     <li key={note.text}>{note.text}</li>
                   ))}
                 </ul>
-              </div>
+              </Box>
             )}
-          </div>
-        </section>
+          </Container>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 

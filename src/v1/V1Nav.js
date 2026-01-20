@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { withBasePath } from "../common/siteMeta";
 import "./v1.css";
+import { Box, Button, ButtonBase, Link as MuiLink, Typography } from "@mui/material";
 
 const V1_SECTIONS = [
   { id: "v1-story", label: "Story" },
@@ -44,47 +45,60 @@ const V1Nav = () => {
   };
 
   return (
-    <nav className="v1-nav" aria-label="Primary">
-      <div className="v1-nav-left">
-        <span className="v1-logo">HK</span>
-      </div>
-      <div className="v1-nav-links">
+    <Box component="nav" className="v1-nav" aria-label="Primary">
+      <Box className="v1-nav-left">
+        <Typography className="v1-logo" component="span">
+          HK
+        </Typography>
+      </Box>
+      <Box className="v1-nav-links">
         {V1_SECTIONS.map((section) => (
-          <button
+          <Button
             key={section.id}
-            type="button"
             className="v1-nav-link"
             onClick={() => handleSectionClick(section.id)}
+            disableElevation
+            disableRipple
+            sx={{ textTransform: "none", minWidth: 0 }}
           >
             {section.label}
-          </button>
+          </Button>
         ))}
-      </div>
-      <div className="v1-nav-actions">
-        <Link className="v1-link-pill" to={withBasePath("/")}>
+      </Box>
+      <Box className="v1-nav-actions">
+        <MuiLink
+          className="v1-link-pill"
+          component={Link}
+          to={withBasePath("/")}
+          underline="none"
+        >
           v0
-        </Link>
-        <button
-          type="button"
+        </MuiLink>
+        <ButtonBase
           className={`v1-theme-toggle ${theme === "dark" ? "is-dark" : ""}`}
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
-          <span className="v1-theme-label">Light</span>
-          <span className="v1-theme-track">
-            <span className="v1-theme-thumb" />
-          </span>
-          <span className="v1-theme-label">Dark</span>
-        </button>
-        <button
-          type="button"
+          <Typography className="v1-theme-label" component="span">
+            Light
+          </Typography>
+          <Box className="v1-theme-track">
+            <Box className="v1-theme-thumb" />
+          </Box>
+          <Typography className="v1-theme-label" component="span">
+            Dark
+          </Typography>
+        </ButtonBase>
+        <Button
           className="v1-button primary"
           onClick={() => handleSectionClick("v1-contact")}
+          disableElevation
+          disableRipple
         >
           Contact me
-        </button>
-      </div>
-    </nav>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

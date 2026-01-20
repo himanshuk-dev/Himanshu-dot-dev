@@ -1,4 +1,14 @@
 import React from "react";
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  Typography,
+} from "@mui/material";
 
 const ResumeModal = ({
   isOpen,
@@ -8,53 +18,63 @@ const ResumeModal = ({
   resumeUrl,
   previewUrl,
 }) => {
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <div
-      className="v1-modal-overlay"
-      role="dialog"
-      aria-modal="true"
-      onClick={onClose}
+    <Dialog
+      open={isOpen}
+      onClose={onClose}
+      aria-labelledby="resume-dialog-title"
+      BackdropProps={{ className: "v1-modal-overlay" }}
+      PaperProps={{ className: "v1-modal" }}
+      maxWidth="lg"
+      fullWidth
     >
-      <div className="v1-modal" onClick={(event) => event.stopPropagation()}>
-        <div className="v1-modal-header">
-          <h3>Resume Preview</h3>
-          <button
-            type="button"
-            className="v1-modal-close"
-            onClick={onClose}
-            aria-label="Close resume preview"
-          >
-            ×
-          </button>
-        </div>
+      <DialogTitle
+        className="v1-modal-header"
+        id="resume-dialog-title"
+        component="div"
+      >
+        <Typography component="h3">Resume Preview</Typography>
+        <IconButton
+          type="button"
+          className="v1-modal-close"
+          onClick={onClose}
+          aria-label="Close resume preview"
+          disableRipple
+        >
+          ×
+        </IconButton>
+      </DialogTitle>
+      <DialogContent>
         {isLoading && (
-          <div className="v1-modal-loading">Loading resume preview…</div>
+          <Box className="v1-modal-loading">Loading resume preview…</Box>
         )}
-        <iframe
+        <Box
+          component="iframe"
           className="v1-resume-frame"
           src={previewUrl || resumeUrl}
           title="Resume preview"
           onLoad={onLoad}
         />
-        <div className="v1-modal-footer">
-          <div className="v1-modal-actions">
-            <span className="v1-modal-note">Download available via Drive</span>
-            <a
-              className="v1-button ghost"
-              href={resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open full resume
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+      </DialogContent>
+      <DialogActions className="v1-modal-footer">
+        <Box className="v1-modal-actions">
+          <Typography className="v1-modal-note" component="span">
+            Download available via Drive
+          </Typography>
+          <Button
+            className="v1-button ghost"
+            component="a"
+            href={resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            disableElevation
+            disableRipple
+          >
+            Open full resume
+          </Button>
+        </Box>
+      </DialogActions>
+    </Dialog>
   );
 };
 

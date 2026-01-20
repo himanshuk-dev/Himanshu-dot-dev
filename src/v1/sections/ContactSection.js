@@ -1,26 +1,38 @@
 import React from "react";
+import { Box, Button, Container, Typography } from "@mui/material";
 
 const ContactSection = () => {
   return (
-    <section className="v1-section v1-contact v1-reveal" id="v1-contact">
-      <div className="v1-section-inner">
-        <h2>Let’s build something</h2>
-        <p>Ready to collaborate? Reach out via LinkedIn or send an email.</p>
-        <div className="v1-contact-actions">
-          <a
+    <Box component="section" className="v1-section v1-contact v1-reveal" id="v1-contact">
+      <Container className="v1-section-inner" disableGutters maxWidth={false}>
+        <Typography component="h2">Let’s build something</Typography>
+        <Typography component="p">
+          Ready to collaborate? Reach out via LinkedIn or send an email.
+        </Typography>
+        <Box className="v1-contact-actions">
+          <Button
             className="v1-button primary"
+            component="a"
             href="https://www.linkedin.com/in/himanshukumar3/"
             target="_blank"
             rel="noopener noreferrer"
+            disableElevation
+            disableRipple
           >
             Connect on LinkedIn
-          </a>
-          <a className="v1-button ghost" href="mailto:himanshuk.kumar01@gmail.com">
+          </Button>
+          <Button
+            className="v1-button ghost"
+            component="a"
+            href="mailto:himanshuk.kumar01@gmail.com"
+            disableElevation
+            disableRipple
+          >
             Send an email
-          </a>
-        </div>
-      </div>
-    </section>
+          </Button>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

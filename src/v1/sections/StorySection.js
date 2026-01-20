@@ -1,27 +1,36 @@
 import React from "react";
+import { Box, Container, Stack, Typography } from "@mui/material";
 
 const StorySection = ({ storyBeats, storyTldr }) => {
   return (
-    <section className="v1-section v1-story v1-reveal" id="v1-story">
-      <div className="v1-section-inner">
-        <h2>Story</h2>
-        <div className="v1-story-grid">
+    <Box component="section" className="v1-section v1-story v1-reveal" id="v1-story">
+      <Container className="v1-section-inner" disableGutters maxWidth={false}>
+        <Typography component="h2">Story</Typography>
+        <Box className="v1-story-grid">
           {storyBeats.map((beat, index) => (
-            <p key={index}>{beat}</p>
+            <Typography component="p" key={index}>
+              {beat}
+            </Typography>
           ))}
-        </div>
-        <div className="v1-tldr">
-          <span className="v1-label">TL;DR</span>
-          <div className="v1-tldr-pills">
+        </Box>
+        <Box className="v1-tldr">
+          <Typography className="v1-label" component="span">
+            TL;DR
+          </Typography>
+          <Stack
+            className="v1-tldr-pills"
+            direction="row"
+            sx={{ flexWrap: "wrap" }}
+          >
             {storyTldr.map((item) => (
-              <span className="v1-pill" key={item}>
+              <Box className="v1-pill" component="span" key={item}>
                 {item}
-              </span>
+              </Box>
             ))}
-          </div>
-        </div>
-      </div>
-    </section>
+          </Stack>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

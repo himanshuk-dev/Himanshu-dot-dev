@@ -13,6 +13,7 @@ import WorkSection from "./sections/WorkSection";
 import ProofSection from "./sections/ProofSection";
 import ContactSection from "./sections/ContactSection";
 import "./v1.css";
+import { Box } from "@mui/material";
 
 const featuredProjectKeys = [
   "beyondsnack",
@@ -187,7 +188,7 @@ const V1Page = () => {
   };
 
   return (
-    <div className="v1-page">
+    <Box className="v1-page">
       <V1Nav />
       <HeroSection profileImage={profileImage} onResumeOpen={handleResumeOpen} />
       <StorySection storyBeats={storyBeats} storyTldr={storyTldr} />
@@ -206,7 +207,7 @@ const V1Page = () => {
         onClose={handleResumeClose}
         onLoad={() => setIsResumeLoading(false)}
       />
-    </div>
+    </Box>
   );
 };
 

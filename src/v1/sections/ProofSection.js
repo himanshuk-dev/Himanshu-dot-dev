@@ -1,20 +1,21 @@
 import React from "react";
+import { Box, Card, Container, Typography } from "@mui/material";
 
 const ProofSection = ({ proofPoints }) => {
   return (
-    <section className="v1-section v1-proof v1-reveal" id="v1-proof">
-      <div className="v1-section-inner">
-        <h2>Proof & Momentum</h2>
-        <div className="v1-proof-grid">
+    <Box component="section" className="v1-section v1-proof v1-reveal" id="v1-proof">
+      <Container className="v1-section-inner" disableGutters maxWidth={false}>
+        <Typography component="h2">Proof & Momentum</Typography>
+        <Box className="v1-proof-grid">
           {proofPoints.map((point) => (
-            <div className="v1-proof-card" key={point.title}>
-              <h3>{point.title}</h3>
-              <p>{point.detail}</p>
-            </div>
+            <Card className="v1-proof-card" key={point.title} elevation={0}>
+              <Typography component="h3">{point.title}</Typography>
+              <Typography component="p">{point.detail}</Typography>
+            </Card>
           ))}
-        </div>
-      </div>
-    </section>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 
