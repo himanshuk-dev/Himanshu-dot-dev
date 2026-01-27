@@ -9,7 +9,7 @@ const Navbar = ({ handleContactClick }) => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <Link to={withBasePath("/")}>
+        <Link to={withV1BasePath("/")}>
           <img src={Logo} alt="LinkedIn" />
         </Link>
       </div>

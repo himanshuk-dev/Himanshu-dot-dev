@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { withBasePath } from "../common/siteMeta";
+import { withBasePath, withV1BasePath } from "../common/siteMeta";
 import "./v1.css";
+import Logo from "../static/icons/logo.png";
 import { Box, Button, ButtonBase, Link as MuiLink, Typography } from "@mui/material";
 
 const V1_SECTIONS = [
@@ -47,9 +48,20 @@ const V1Nav = () => {
   return (
     <Box component="nav" className="v1-nav" aria-label="Primary">
       <Box className="v1-nav-left">
-        <Typography className="v1-logo" component="span">
-          HK
-        </Typography>
+        <MuiLink
+          component={Link}
+          to={withV1BasePath("/")}
+          underline="none"
+          aria-label="Go to V1 home"
+          sx={{ display: "inline-flex", alignItems: "center" }}
+        >
+          <Box
+            component="img"
+            src={Logo}
+            alt="Himanshu Kumar"
+            sx={{ width: 80, height: 80 }}
+          />
+        </MuiLink>
       </Box>
       <Box className="v1-nav-links">
         {V1_SECTIONS.map((section) => (
@@ -59,7 +71,11 @@ const V1Nav = () => {
             onClick={() => handleSectionClick(section.id)}
             disableElevation
             disableRipple
-            sx={{ textTransform: "none", minWidth: 0 }}
+            sx={{
+              textTransform: "none",
+              minWidth: 0,
+              fontSize: { xs: "1rem", md: "1.05rem", lg: "1.1rem" },
+            }}
           >
             {section.label}
           </Button>

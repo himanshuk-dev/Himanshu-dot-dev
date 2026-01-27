@@ -30,7 +30,7 @@ const RouteShell = ({ footerRef, handleContactClick }) => {
     <>
       {!isV1 && <Navbar handleContactClick={handleContactClick} />}
       <Routes>
-        <Route path="/" element={<Navigate to={SITE_BASE_PATH} replace />} />
+        <Route path="/" element={<Navigate to={SITE_V1_BASE_PATH} replace />} />
         <Route path={SITE_BASE_PATH} element={<Home footerRef={footerRef} />} />
 
         <Route path={`${SITE_BASE_PATH}/about`} element={<AboutPage />} />

@@ -117,16 +117,21 @@ const V1Page = () => {
   const timelineHighlights = [
     {
       date: "August 2025 - Present",
+      role: "Software Engineer",
+      company: "CanAI Garage (PSPC)",
       description:
-        "At CanAI Garage (PSPC), I build production-oriented, responsible AI workflows that support operational decision-making. I focus on backend services, data validation, and UX-focused feedback loops that improve reliability, and I mentor developers through code reviews, pairing, and unblocking work across the team.",
+        "At CanAI Garage (PSPC), I design and deliver AI-enabled and rule-based systems that support federal operational decision-making. I own full-stack delivery across React/MUI frontends and Django/PostgreSQL services, translating policy and business rules into auditable workflows and building data-driven tools for intake, evaluation, and reporting.",
       impact: [
-        "Built responsible AI workflows for operational decision-making.",
-        "Improved reliability with validation and feedback loops.",
-        "Mentored developers through reviews, pairing, and unblockers.",
+        "Shipped production systems across predictive AI, rule-based engines, and risk/fraud detection workflows.",
+        "Delivered secure, scalable APIs and data-driven interfaces for analytics, automation, and evaluation logic.",
+        "Led UI/UX implementation for internal tools (job management, rule configuration, and reporting).",
+        "Mentored engineers, led sprint initiatives, and aligned delivery with policy and operational standards.",
       ],
     },
     {
       date: "September 2024 - August 2025",
+      role: "Full-stack Lead",
+      company: "Beyond Snack",
       description:
         "I led the full-stack build and launch of Beyond Snack, owning the e-commerce experience end to end. That included checkout reliability with Stripe, admin tooling for operations, and customer workflows that kept the product and brand experience consistent.",
       impact: [
@@ -137,6 +142,8 @@ const V1Page = () => {
     },
     {
       date: "July 2024 - September 2024",
+      role: "Frontend Engineer",
+      company: "Iter Innovandi",
       description:
         "At Iter Innovandi, I helped shape a lead-gen platform for an AI startup, pairing frontend systems with automation and analytics to strengthen conversion workflows.",
       impact: [
@@ -147,6 +154,8 @@ const V1Page = () => {
     },
     {
       date: "April 2024 - June 2024",
+      role: "Full-stack Engineer",
+      company: "Wizardry Labs",
       description:
         "At Wizardry Labs, I built TypeScript and Next.js applications and optimized data access patterns with SQL/Prisma, while improving Docker workflows for smoother deployments.",
       impact: [
@@ -157,6 +166,8 @@ const V1Page = () => {
     },
     {
       date: "December 2023 - April 2024",
+      role: "Frontend Engineer",
+      company: "Contract Projects",
       description:
         "I delivered high-conversion storefronts using Next.js and React, focusing on accessible, responsive UI patterns that improved the shopping experience.",
       impact: [
@@ -167,6 +178,8 @@ const V1Page = () => {
     },
     {
       date: "November 2022 - October 2023",
+      role: "Full Stack Engineering Fellow",
+      company: "Springboard",
       description:
         "I completed the 1-year Full Stack Software Engineering program at Springboard, shipping multiple full-stack apps and sharpening my review and collaboration habits.",
       impact: [
@@ -177,6 +190,8 @@ const V1Page = () => {
     },
     {
       date: "July 2021 - November 2021",
+      role: "Self-directed Learner",
+      company: "LinkedIn Learning",
       description:
         "I began self-learning web development in July 2021 and completed LinkedIn Learning in November 2021, building early projects that validated the transition into software engineering.",
       impact: [
