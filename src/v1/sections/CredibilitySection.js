@@ -26,14 +26,34 @@ const CredibilitySection = ({ credibilityStats, timelineHighlights }) => {
         </Box>
         <Box className="v1-timeline">
           {timelineHighlights.map((item) => (
-            <Box className="v1-timeline-item" key={item.date}>
-              <Typography className="v1-timeline-date" component="p">
-                {item.date}
-              </Typography>
-              <Typography className="v1-timeline-event" component="p">
-                {item.description}
-              </Typography>
-            </Box>
+            <Card className="v1-timeline-card" key={item.date} elevation={0}>
+              <Box className="v1-timeline-card-inner">
+                <Typography className="v1-timeline-date" component="p">
+                  {item.date}
+                </Typography>
+                <Typography className="v1-timeline-event" component="p">
+                  {item.description}
+                </Typography>
+                {item.impact?.length ? (
+                  <Box className="v1-timeline-impact">
+                    <Typography className="v1-impact-label" component="p">
+                      Impact
+                    </Typography>
+                    <Box component="ul" className="v1-impact-list">
+                      {item.impact.map((impact, index) => (
+                        <Box
+                          component="li"
+                          className="v1-impact-item"
+                          key={`${item.date}-${index}`}
+                        >
+                          <Typography component="p">{impact}</Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                  </Box>
+                ) : null}
+              </Box>
+            </Card>
           ))}
         </Box>
       </Container>

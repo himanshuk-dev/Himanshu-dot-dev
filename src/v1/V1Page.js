@@ -119,36 +119,71 @@ const V1Page = () => {
       date: "August 2025 - Present",
       description:
         "At CanAI Garage (PSPC), I build production-oriented, responsible AI workflows that support operational decision-making. I focus on backend services, data validation, and UX-focused feedback loops that improve reliability, and I mentor developers through code reviews, pairing, and unblocking work across the team.",
+      impact: [
+        "Built responsible AI workflows for operational decision-making.",
+        "Improved reliability with validation and feedback loops.",
+        "Mentored developers through reviews, pairing, and unblockers.",
+      ],
     },
     {
       date: "September 2024 - August 2025",
       description:
         "I led the full-stack build and launch of Beyond Snack, owning the e-commerce experience end to end. That included checkout reliability with Stripe, admin tooling for operations, and customer workflows that kept the product and brand experience consistent.",
+      impact: [
+        "Owned the full-stack launch of Beyond Snack.",
+        "Hardened Stripe checkout reliability and ops tooling.",
+        "Shipped customer workflows that kept the brand experience consistent.",
+      ],
     },
     {
       date: "July 2024 - September 2024",
       description:
         "At Iter Innovandi, I helped shape a lead-gen platform for an AI startup, pairing frontend systems with automation and analytics to strengthen conversion workflows.",
+      impact: [
+        "Shaped a lead-gen platform for an AI startup.",
+        "Paired frontend systems with automation and analytics.",
+        "Strengthened conversion workflows with data-backed updates.",
+      ],
     },
     {
       date: "April 2024 - June 2024",
       description:
         "At Wizardry Labs, I built TypeScript and Next.js applications and optimized data access patterns with SQL/Prisma, while improving Docker workflows for smoother deployments.",
+      impact: [
+        "Built TypeScript and Next.js applications.",
+        "Optimized data access patterns with SQL/Prisma.",
+        "Improved Docker workflows for smoother deployments.",
+      ],
     },
     {
       date: "December 2023 - April 2024",
       description:
         "I delivered high-conversion storefronts using Next.js and React, focusing on accessible, responsive UI patterns that improved the shopping experience.",
+      impact: [
+        "Shipped high-conversion storefronts with Next.js and React.",
+        "Improved accessibility with responsive UI patterns.",
+        "Enhanced the shopping experience with UX-focused updates.",
+      ],
     },
     {
       date: "November 2022 - October 2023",
       description:
         "I completed the 1-year Full Stack Software Engineering program at Springboard, shipping multiple full-stack apps and sharpening my review and collaboration habits.",
+      impact: [
+        "Shipped multiple full-stack applications end-to-end.",
+        "Built strong code review and collaboration habits.",
+        "Strengthened full-stack fundamentals through the program.",
+      ],
     },
     {
       date: "July 2021 - November 2021",
       description:
         "I began self-learning web development in July 2021 and completed LinkedIn Learning in November 2021, building early projects that validated the transition into software engineering.",
+      impact: [
+        "Built early projects to validate the career transition.",
+        "Developed web fundamentals through structured courses.",
+        "Established a consistent learning cadence and portfolio base.",
+      ],
     },
   ];
 
