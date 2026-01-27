@@ -1,0 +1,132 @@
+.v1-project-page {
+  padding-bottom: 6vh;
+}
+
+.v1-project-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 3rem;
+  padding: 6vh 8vw 4vh;
+  position: relative;
+  z-index: 1;
+}
+
+.v1-project-hero-content {
+  max-width: 620px;
+}
+
+.v1-project-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.v1-project-badge img {
+  max-width: 140px;
+  margin-top: 1rem;
+}
+
+.v1-project-meta {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.v1-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.v1-project-hero-media img,
+.v1-project-video iframe {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--v1-border);
+  box-shadow: 0 18px 40px var(--v1-shadow);
+}
+
+.v1-project-video iframe {
+  min-height: 280px;
+}
+
+.v1-project-section {
+  padding: 4vh 8vw;
+}
+
+.v1-project-gallery {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.v1-project-image {
+  border: 1px solid var(--v1-border);
+  border-radius: 18px;
+  padding: 1.25rem;
+  background: var(--v1-surface);
+}
+
+.v1-project-image img {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 0.75rem;
+}
+
+.v1-project-devflow {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.v1-project-devflow-steps {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.v1-project-step {
+  border: 1px solid var(--v1-border);
+  border-radius: 16px;
+  padding: 1rem;
+  background: var(--v1-surface-alt);
+}
+
+.v1-project-challenges,
+.v1-project-learnings {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.v1-project-challenge,
+.v1-project-learning {
+  border: 1px solid var(--v1-border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  background: var(--v1-surface);
+}
+
+.v1-project-notes {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--v1-border);
+  border-radius: 14px;
+  background: var(--v1-surface-alt);
+}
+
+.v1-project-notes ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.v1-project-missing {
+  padding: 6vh 8vw;
+}
+
+@media (max-width: 900px) {
+  .v1-project-hero {
+    grid-template-columns: 1fr;
+  }
+}

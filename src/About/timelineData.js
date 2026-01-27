@@ -6,16 +6,23 @@ import codeReview from "../static/icons/codeReview.png";
 import assessment from "../static/icons/assessment.png";
 import essential from "../static/icons/essential.png";
 import start from "../static/icons/start.png";
+import { SITE_BASE_PATH } from "../common/siteMeta";
 
 const TimelineData = [
   {
-  date: "September 2024 - Present",
-  event:
-    "Developed and launched Beyond Snack, a clean-label food brand focused on protein-rich, no-added-sugar snacks. I'm leading all aspects from product development to full-stack platform implementation using React, Node.js, PostgreSQL, and AWS. Currently managing e-commerce, fulfillment, customer engagement, and admin dashboard systems.",
-  color: "#F0F8F8",
-  projectLink: "https://beyondsnack.ca/",
+    date: "August 2025 - Present",
+    event:
+      "Software Engineer / IT Developer at CanAI Garage (Public Services and Procurement Canada). Building responsible, production-oriented AI-enabled systems that support operational decision-making. Contributing across backend services, data validation workflows, and UX-focused feedback mechanisms, while supporting code reviews, agile delivery, and team enablement.",
+    color: "#F0F8F8",
+  },
+  {
+    date: "September 2024 - August 2025",
+    event:
+      "Developed and launched Beyond Snack, a clean-label food brand focused on protein-rich, no-added-sugar snacks. Led product development and full-stack platform implementation using React, Node.js, PostgreSQL, and AWS. Managed e-commerce, fulfillment, customer engagement, and admin dashboard systems.",
+    color: "#F0F8F8",
+    projectLink: "https://beyondsnack.ca/",
     linkText: "Checkout: Beyond Snack",
-},
+  },
   {
     date: "July 2024 - September 2024",
     event:
@@ -33,7 +40,7 @@ const TimelineData = [
     event:
       "Led the development of a high-conversion e-commerce platform at EliteKitchenFinds utilizing Next.js and TypeScript, while crafting dynamic, responsive interfaces with React and Chakra UI, significantly enhancing user engagement and accessibility.",
     color: "#F9E2DC",
-    projectLink: "https://himanshu.dev/projects/elitekitchenfinds",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/elitekitchenfinds`,
     linkText: "Checkout: EliteKitchenFinds",
   },
   {
@@ -49,7 +56,7 @@ const TimelineData = [
   {
     date: "October 2023",
     event:
-      " Completed Software Engineering (Full Stack) program at Springboard where was actively involved in code reviews and built several Full Stack applications using React.js at Frontend and Node-based API for backend and more. ",
+      "Completed the 1-year Software Engineering (Full Stack) program at Springboard, transitioning fully into software engineering. Built multiple full-stack applications with React on the frontend and Node-based APIs on the backend, and participated in code reviews.",
     color: "#EEF5E0",
     icon: star,
   },
@@ -59,7 +66,7 @@ const TimelineData = [
     event:
       " Won Springboard Hackathon where I worked in a team to work on a original idea to build AI-powered platform aiming to boost empathy and emotional intelligence in remote workplace environments, which got selected out of hundreds of ideas. ",
     color: "#F9EFE3",
-    projectLink: "https://himanshu.dev/projects/pathos",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/pathos`,
     linkText: "Checkout Project: Pathos",
   },
   {
@@ -76,7 +83,7 @@ const TimelineData = [
     event:
       "Built Full Stack app: Remplr, Meal planner platform to help nutritionists serve their clients efficiently using React for Frontend and node-based API for backend. Went into planning achitecture and database schema design to better plan the project.",
     color: "#E8E5CF",
-    projectLink: "https://himanshu.dev/projects/remplr",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/remplr`,
     linkText: "Checkout Project:Remplr 2.0",
   },
 
@@ -95,7 +102,7 @@ const TimelineData = [
     event:
       "Built database-driven application leveraging a Python framework, Flask, and integrated a PostgreSQL database. The development process involved formulating project proposals, meticulously planning data sourcing and API selection, developing user flows, and thoroughly documenting the project.",
     color: "#F9EFE3",
-    projectLink: "https://himanshu.dev/projects/remplr-veg",
+    projectLink: `https://himanshu.dev${SITE_BASE_PATH}/projects/remplr-veg`,
     linkText: "Checkout Project: Remplr 1.0",
   },
   {
@@ -106,7 +113,7 @@ const TimelineData = [
   {
     date: "November 2022",
     event:
-      "Started Full Stack Software Engineering program with Springboard. The journey commenced with a thorough review and reinforcement of developer fundamentals, focusing on object-oriented programming.",
+      "Started the 1-year Full Stack Software Engineering program at Springboard. The journey commenced with a thorough review of developer fundamentals, focusing on object-oriented programming.",
     color: "#F8FFF2",
   },
   {
@@ -117,7 +124,7 @@ const TimelineData = [
   {
     date: "September 2022",
     event:
-      "At this point, I recognized that I had a solid foundation and decided to take the next step in elevating my development skills. This led me to discover Springboard. I conducted thorough research, engaged with alumni, gained insights into their mentorship approach, and connected with the admissions team at Springboard.",
+      "With a growing foundation from self-learning and online courses, I decided to transition into software engineering. I researched Springboard, connected with alumni, and prepared for the Full Stack program.",
     color: "#F9EFE3",
   },
 

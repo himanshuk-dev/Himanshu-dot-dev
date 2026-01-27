@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../static/styles//homepage/work.css";
 import Projects from "./projects";
 import Title from "../common/title";
+import { withBasePath } from "../common/siteMeta";
 
 const Work = () => {
   // State to store the current background color
@@ -17,7 +18,7 @@ const Work = () => {
         </div>
         <div className="projects-container">
           {Projects.map((project) => (
-            <Link to={`/projects/${project.linkData}`} key={project.id}>
+            <Link to={withBasePath(`/projects/${project.linkData}`)} key={project.id}>
               <div
                 className="project"
                 style={{ backgroundColor: project.backgroundColor }}

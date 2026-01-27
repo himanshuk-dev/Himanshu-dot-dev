@@ -6,6 +6,7 @@ import Email from "../static/icons/email.png";
 import "../static/styles/common/footer.css";
 
 import Title from "./title";
+import { SITE_VERSION } from "./siteMeta";
 
 const Footer = ({ footerRef }) => {
   return (
@@ -73,6 +74,7 @@ const Footer = ({ footerRef }) => {
             <small>
               <p>Made with ❤️ in Vancouver</p>
               <p>using React.js</p>
+              <p>Portfolio {SITE_VERSION}</p>
             </small>
             <a
               href="https://github.com/himanshuk-dev/dot-dev"

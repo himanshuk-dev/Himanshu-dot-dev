@@ -11,7 +11,7 @@ const BeyondSnackData = {
   liveLink: "https://beyondsnack.ca",
   role: "Founding Software Engineer",
   techStack: "React.js, Node.js, Express.js, PostgreSQL, Material UI, AWS, Stripe",
-  timeline: "September 2024 – Present",
+  timeline: "September 2024 – August 2025",
   devFlow: {
     headings: [
       {
