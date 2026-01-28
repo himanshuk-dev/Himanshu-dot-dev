@@ -98,9 +98,9 @@ const V1Page = () => {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isResumeLoading, setIsResumeLoading] = useState(false);
   const resumeUrl =
-    "https://drive.google.com/file/d/1QJHA5miIfpKiWbGoUKes6GpPl4Ti1v6w/view?usp=sharing";
+  "https://drive.google.com/file/d/19EwcyrWnL7H6x_HtCieXFjNImxGAoHOI/view?usp=sharing";
   const resumePreviewUrl =
-    "https://drive.google.com/file/d/1QJHA5miIfpKiWbGoUKes6GpPl4Ti1v6w/preview";
+    "https://drive.google.com/file/d/19EwcyrWnL7H6x_HtCieXFjNImxGAoHOI/preview";
 
   const featuredProjects = Projects.filter((project) =>
     featuredProjectKeys.includes(project.linkData)
